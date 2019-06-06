@@ -1,14 +1,5 @@
 .left {
-  background-color: #f4f4f4;
-}
-
-.right {
-}
-
-.centered {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  overflow-y: scroll;
+  padding: 0px 30px;
+  height: 100%;
 }
