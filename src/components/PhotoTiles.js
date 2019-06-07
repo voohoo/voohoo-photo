@@ -10,7 +10,6 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
   },
   gridList: {
     width: '100%',
@@ -18,17 +17,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function PhotoTiles() {
+function PhotoTiles(props) {
   const classes = useStyles();
-
-  console.log(tileData);
 
   return (
     <div className={classes.root}>
       <GridList cellHeight={160} className={classes.gridList} cols={3}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1}>
-            <img src={tile.img} alt={tile.title} />
+            <img src={tile.img} alt={tile.title} onClick={() => props.onClick(tile.img)} />
           </GridListTile>
         ))}
       </GridList>

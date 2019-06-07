@@ -3,19 +3,35 @@ import './App.css';
 import Grid from '@material-ui/core/Grid';
 import TopBar from './components/TopBar';
 import PhotoTiles from './components/PhotoTiles';
+import PhotoDisplay from './components/PhotoDisplay';
 
-function App() {
-  return (
-    <Grid container spacing={0} style={{height: "100vh"}}>
-      <Grid item md={4} className="left">
-        <TopBar></TopBar>
-        <PhotoTiles></PhotoTiles>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedPhoto: ''
+    };
+  }
+
+  handleClick(e) {
+    this.setState({
+      selectedPhoto: e
+    });
+  }
+
+  render() {
+    return (
+      <Grid container spacing={0} style={{height: "100vh"}}>
+        <Grid item md={4} className="left">
+          <TopBar></TopBar>
+          <PhotoTiles onClick={(e) => this.handleClick(e)}></PhotoTiles>
+        </Grid>
+        <Grid item md={8} className="right">
+          <PhotoDisplay photoPath={this.state.selectedPhoto}></PhotoDisplay>
+        </Grid>
       </Grid>
-      <Grid item md={8}>
-        
-      </Grid>
-    </Grid>
-  );
+    );
+  }
 }
 
 export default App;
