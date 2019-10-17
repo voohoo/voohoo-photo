@@ -8,3 +8,8 @@
   padding: 50px;
   height: 100%;
 }
+
+.app-container {
+  height: 100%;
+  padding: 120px 75vw 30px 30px;
+}
