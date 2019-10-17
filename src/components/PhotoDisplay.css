@@ -1,16 +1,46 @@
 .photo-container {
-  width: 100%;
-  height: 100%;
+  z-index: 2;
+  position: fixed;
+  width: 70vw;
+  height: 70vh;
+  top: 120px;
+  right: 0;
+  transition: all .15s linear;
+}
+
+.photo-container.full-screen {
+  background-color: white;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
 }
 
 .photo-display {
   width: auto;
   max-width: 100%;
-  height: auto%;
+  height: auto;
   max-height: 100%;
   position: relative;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  transform: translateX(-50%);
+}
+
+#myDiv.fullscreen {
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#myDiv {
+  position: fixed;
+  width: 500px;
+  height: 400px;
+  top: 20px;
+  left: 20px;
+  transition: all .15s linear;
+  background: #cc0000;
 }
