@@ -3,8 +3,8 @@ import './TopBar.css';
 
 function TopBar() {
   return (
-    <div id="topBar">
-      voohoo
+    <div id="top-bar">
+      <div className="top-bar-content">voohoo</div>
     </div>
   );
 }

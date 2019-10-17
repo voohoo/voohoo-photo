@@ -1,4 +1,19 @@
-#topBar {
+#top-bar {
+  z-index: 1;
+  box-sizing: border-box;
+  height: 120px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding-left: 30px;
+  padding-right: 75vw;
   text-align: center;
-  padding: 15px 0px;
+  background-color: white;
+}
+
+.top-bar-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
