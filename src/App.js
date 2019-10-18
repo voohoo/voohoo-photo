@@ -10,8 +10,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedPhoto: ''
+      photos: tileData,
+      selectedPhoto: '',
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      selectedPhoto: this.state.photos[0].img
+    });
   }
 
   handleClick(e) {
