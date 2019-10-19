@@ -10,15 +10,12 @@ class PhotoDisplay extends React.Component {
   }
 
   handleClick() {
-    console.log('CLICK');
     this.setState(prevState => ({
       isFullScreen: !prevState.isFullScreen
     }));
   }
 
   render() {
-    console.log('RENDER');
-    console.log(this.state.isFullScreen);
     const displayClass =
       this.state.isFullScreen ? "photo-container full-screen" : "photo-container";
 
