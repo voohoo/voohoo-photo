@@ -4,7 +4,9 @@ import './TopBar.css';
 function TopBar() {
   return (
     <div id="top-bar">
-      <div className="top-bar-content">voohoo</div>
+      <div className="top-bar-content">
+        <img src="images/brand/voohoo-black.png" width="120" alt="voohoo brand" />
+      </div>
     </div>
   );
 }
