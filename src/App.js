@@ -12,6 +12,7 @@ class App extends React.Component {
     this.state = {
       photos: tileData,
       selectedPhoto: '',
+      isFullScreen: false,
     };
   }
 
@@ -21,36 +22,38 @@ class App extends React.Component {
     });
   }
 
-  handleClick(e) {
+  handleTileClick(e) {
     this.setState({
       selectedPhoto: e
     });
   }
 
+  handlePhotoClick() {
+    this.setState(prevState => ({
+      isFullScreen: !prevState.isFullScreen
+    }));
+  }
+
   render() {
+    const overlayClass = this.state.isFullScreen ? 'show' : '';
 
     return (
       <div>
-        <TopBar></TopBar>
+        <TopBar />
         <div className="app-container">
-          <PhotoTiles tileData={tileData} onClick={(e) => this.handleClick(e)}></PhotoTiles>
-          <PhotoDisplay photoPath={this.state.selectedPhoto}></PhotoDisplay>
+          <PhotoTiles
+            tileData={tileData}
+            onClick={(e) => this.handleTileClick(e)}
+          />
+          <PhotoDisplay
+            photoPath={this.state.selectedPhoto}
+            isFullScreen={this.state.isFullScreen}
+            onClick={() => this.handlePhotoClick()}
+          />
         </div>
+        <div id="overlay" className={overlayClass}></div>
       </div>
     );
-    /*
-    return (
-      <Grid container spacing={0} style={{height: "100vh"}}>
-        <Grid item md={4} className="left">
-          <TopBar></TopBar>
-          <PhotoTiles onClick={(e) => this.handleClick(e)}></PhotoTiles>
-        </Grid>
-        <Grid item md={8} className="right">
-          <PhotoDisplay photoPath={this.state.selectedPhoto}></PhotoDisplay>
-        </Grid>
-      </Grid>
-    );
-    */
   }
 }
 

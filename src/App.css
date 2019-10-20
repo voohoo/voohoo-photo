@@ -1,15 +1,26 @@
-.left {
-  overflow-y: scroll;
-  padding: 0px 30px;
-  height: 100%;
-}
-
-.right {
-  padding: 50px;
-  height: 100%;
-}
-
 .app-container {
   height: 100%;
-  padding: 120px 75vw 30px 30px;
+  padding: 80px 75vw 30px 30px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent; /* Black background with opacity */
+  z-index: -1; /* Specify a stack order in case you're using a different order for other elements */
+  transition: background-color .15s linear;
+}
+
+#overlay.show {
+  background-color: white;
+  z-index: 2;
 }

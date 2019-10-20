@@ -1,18 +1,17 @@
 .photo-container {
-  z-index: 2;
+  z-index: 3;
   position: fixed;
-  width: 70vw;
-  height: 70vh;
-  top: 120px;
+  width: 70%;
+  height: 70%;
+  top: 80px;
   right: 0;
   transition: all .15s linear;
 }
 
 .photo-container.full-screen {
-  background-color: white;
   z-index: 9999;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   top: 0;
   right: 0;
 }
@@ -25,22 +24,5 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-}
-
-#myDiv.fullscreen {
-  z-index: 9999;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-#myDiv {
-  position: fixed;
-  width: 500px;
-  height: 400px;
-  top: 20px;
-  left: 20px;
-  transition: all .15s linear;
-  background: #cc0000;
+  cursor: pointer;
 }

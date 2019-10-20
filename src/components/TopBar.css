@@ -1,19 +1,18 @@
 #top-bar {
   z-index: 1;
   box-sizing: border-box;
-  height: 120px;
+  height: 80px; /* sync with .app-container and .photo-container */
   width: 100%;
   position: fixed;
   top: 0;
   padding-left: 30px;
   padding-right: 75vw;
   text-align: center;
-  background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1) 40%);
+  background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,0.85) 45%);
 }
 
 .top-bar-content {
   position: relative;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
 }
