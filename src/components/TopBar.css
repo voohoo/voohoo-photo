@@ -16,3 +16,11 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+#menu-bars {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+  cursor: pointer;
+}
