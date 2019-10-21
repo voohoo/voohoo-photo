@@ -3,24 +3,43 @@
   padding: 80px 75vw 30px 30px;
 }
 
-.hidden {
-  visibility: hidden;
-}
-
-#overlay {
-  position: fixed; /* Sit on top of the page content */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+#photo-display-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: transparent; /* Black background with opacity */
-  z-index: -1; /* Specify a stack order in case you're using a different order for other elements */
-  transition: background-color .15s linear;
+  background-color: transparent;
+  z-index: 3;
+  visibility: hidden;
+  transition: background-color .15s, visibility .15s;
 }
 
-#overlay.show {
+#photo-display-overlay.show {
   background-color: white;
-  z-index: 2;
+  visibility: visible;
+}
+
+#menu-overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: -100%;
+  padding-left: 30px;
+  background-color: white;
+  overflow: hidden;
+  /* fix text transition issue for .left and .right but need to
+     overwrite left and right properties in .right */
+  height: 100%;
+  text-align: center;
+  transition: right 0.2s, left 0.2s;
+}
+
+#menu-overlay.show {
+  right: 75vw;
+  left: 0;
 }

@@ -13,6 +13,7 @@ class App extends React.Component {
       photos: tileData,
       selectedPhoto: '',
       isFullScreen: false,
+      isMenuOpen: false,
     };
   }
 
@@ -34,24 +35,55 @@ class App extends React.Component {
     }));
   }
 
+  handleMenuClick() {
+    this.setState(prevState => ({
+      isMenuOpen: !prevState.isMenuOpen
+    }));
+  }
+
   render() {
-    const overlayClass = this.state.isFullScreen ? 'show' : '';
+    const photoOverlayClass = this.state.isFullScreen ? 'show' : '';
+    const menuOverlayClass = this.state.isMenuOpen ? 'show' : '';
 
     return (
       <div>
-        <TopBar />
         <div className="app-container">
+          <TopBar onClick={() => this.handleMenuClick()} />
           <PhotoTiles
             tileData={tileData}
             onClick={(e) => this.handleTileClick(e)}
           />
+          <div
+            id="menu-overlay"
+            className={menuOverlayClass}
+          >
+            <div className="vertical-align">
+              <h3>
+                <a
+                  href="https://www.instagram.com/voo.hoo/"
+                  target="_blank"
+                >
+                  Instagram
+                </a>
+              </h3>
+              <h3>
+                <a
+                  href="https://www.flickr.com/photos/voohoo/"
+                  target="_blank"
+                >
+                  flickr
+                </a>
+              </h3>
+              <h3>vuhuypham99@gmail.com</h3>
+            </div>
+          </div>
           <PhotoDisplay
             photoPath={this.state.selectedPhoto}
             isFullScreen={this.state.isFullScreen}
             onClick={() => this.handlePhotoClick()}
           />
         </div>
-        <div id="overlay" className={overlayClass}></div>
+        <div id="photo-display-overlay" className={photoOverlayClass}></div>
       </div>
     );
   }

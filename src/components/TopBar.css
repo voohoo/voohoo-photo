@@ -1,5 +1,5 @@
 #top-bar {
-  z-index: 1;
+  z-index: 2;
   box-sizing: border-box;
   height: 80px; /* sync with .app-container and .photo-container */
   width: 100%;
@@ -7,6 +7,7 @@
   top: 0;
   padding-left: 30px;
   padding-right: 75vw;
+  margin-left: -30px;
   text-align: center;
   background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,0.9) 40%);
 }
