@@ -16,7 +16,10 @@ function Menu(props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="images/logos/instagram.png" width="40" alt="Instagram link" />
+            <div className="tooltip">
+              <span className="tooltip-text">Instagram</span>
+              <img src="images/logos/instagram.png" width="40" alt="Instagram link" />
+            </div>
           </a>
         </h3>
         <h3>
@@ -25,12 +28,18 @@ function Menu(props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="images/logos/flickr.png" width="40" alt="Flickr link" />
+            <div className="tooltip">
+              <span className="tooltip-text">Flickr</span>
+              <img src="images/logos/flickr.png" width="40" alt="Flickr link" />
+            </div>
           </a>
         </h3>
         <h3>
           <a href="mailto:vuhuypham99@gmail.com">
-            <img src="images/logos/gmail.png" width="40" alt="vuhuypham99@gmail.com email link" />
+            <div className="tooltip">
+              <span className="tooltip-text">vuhuypham99@gmail.com</span>
+              <img src="images/logos/gmail.png" width="40" alt="vuhuypham99@gmail.com email link" />
+            </div>
           </a>
         </h3>
       </div>
