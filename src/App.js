@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 //import Grid from '@material-ui/core/Grid';
 import TopBar from './components/TopBar';
+import Menu from './components/Menu';
 import PhotoTiles from './components/PhotoTiles';
 import PhotoDisplay from './components/PhotoDisplay';
 import tileData from './tileData';
@@ -43,46 +44,16 @@ class App extends React.Component {
 
   render() {
     const photoOverlayClass = this.state.isFullScreen ? 'show' : '';
-    const menuOverlayClass = this.state.isMenuOpen ? 'show' : '';
 
     return (
       <div>
         <div className="app-container">
           <TopBar onClick={() => this.handleMenuClick()} />
+          <Menu isOpen={this.state.isMenuOpen} />
           <PhotoTiles
             tileData={tileData}
             onClick={(e) => this.handleTileClick(e)}
           />
-          <div
-            id="menu-overlay"
-            className={menuOverlayClass}
-          >
-            <div className="vertical-align">
-              <h3>
-                <a
-                  href="https://www.instagram.com/voo.hoo/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="images/logos/instagram.png" width="60" alt="Instagram link" />
-                </a>
-              </h3>
-              <h3>
-                <a
-                  href="https://www.flickr.com/photos/voohoo/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="images/logos/flickr.png" width="60" alt="Flickr link" />
-                </a>
-              </h3>
-              <h3>
-                <a href="mailto:vuhuypham99@gmail.com">
-                  <img src="images/logos/gmail.png" width="60" alt="vuhuypham99@gmail.com email link" />
-                </a>
-              </h3>
-            </div>
-          </div>
           <PhotoDisplay
             photoPath={this.state.selectedPhoto}
             isFullScreen={this.state.isFullScreen}
