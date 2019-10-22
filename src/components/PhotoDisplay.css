@@ -6,6 +6,7 @@
   top: 80px;
   right: 0;
   transition: all .15s linear;
+  padding-right: 30px;
 }
 
 .photo-container.full-screen {
@@ -14,6 +15,7 @@
   height: 100%;
   top: 0;
   right: 0;
+  padding-right: 0;
 }
 
 .photo-display {
