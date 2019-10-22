@@ -64,7 +64,7 @@ class App extends React.Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Instagram
+                  <img src="images/logos/instagram.png" width="60" alt="Instagram link" />
                 </a>
               </h3>
               <h3>
@@ -73,10 +73,14 @@ class App extends React.Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  flickr
+                  <img src="images/logos/flickr.png" width="60" alt="Flickr link" />
                 </a>
               </h3>
-              <h3>vuhuypham99@gmail.com</h3>
+              <h3>
+                <a href="mailto:vuhuypham99@gmail.com">
+                  <img src="images/logos/gmail.png" width="60" alt="vuhuypham99@gmail.com email link" />
+                </a>
+              </h3>
             </div>
           </div>
           <PhotoDisplay
