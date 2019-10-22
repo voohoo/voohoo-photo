@@ -62,6 +62,7 @@ class App extends React.Component {
                 <a
                   href="https://www.instagram.com/voo.hoo/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Instagram
                 </a>
@@ -70,6 +71,7 @@ class App extends React.Component {
                 <a
                   href="https://www.flickr.com/photos/voohoo/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   flickr
                 </a>
