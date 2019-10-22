@@ -14,7 +14,7 @@
   background-color: transparent;
   z-index: 3;
   visibility: hidden;
-  transition: background-color .15s, visibility .15s;
+  transition: background-color .2s, visibility .2s;
 }
 
 #photo-display-overlay.show {
