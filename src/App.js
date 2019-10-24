@@ -52,6 +52,7 @@ class App extends React.Component {
           <Menu isOpen={this.state.isMenuOpen} />
           <PhotoTiles
             tileData={tileData}
+            selectedTile={this.state.selectedPhoto}
             onClick={(e) => this.handleTileClick(e)}
           />
           <PhotoDisplay

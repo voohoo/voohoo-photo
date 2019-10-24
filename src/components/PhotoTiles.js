@@ -16,6 +16,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const selectedStyle = {
+  opacity: 0.3
+};
+
 function PhotoTiles(props) {
   const classes = useStyles();
 
@@ -24,7 +28,12 @@ function PhotoTiles(props) {
       <GridList cellHeight={160} className={classes.gridList} cols={3}>
         {props.tileData.map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1}>
-            <img src={tile.thumb} alt={tile.title} onClick={() => props.onClick(tile.img)} />
+            <img
+              src={tile.thumb}
+              alt={tile.title}
+              style={props.selectedTile === tile.img ? selectedStyle : {}}
+              onClick={() => props.onClick(tile.img)}
+            />
           </GridListTile>
         ))}
       </GridList>
