@@ -11,8 +11,12 @@ function PhotoDisplay(props) {
         src={props.photoPath}
         className="photo-display"
         alt="Displayed"
-        onClick={() => props.onClick()}
+        onClick={props.photoClick}
       />
+      <div className="nav-buttons">
+        <i className="fas fa-chevron-left" onClick={props.previousClick}></i>
+        <i className="fas fa-chevron-right" onClick={props.nextClick}></i>
+      </div>
     </div>
   );
 }

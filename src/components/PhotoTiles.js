@@ -26,13 +26,13 @@ function PhotoTiles(props) {
   return (
     <div className={classes.root}>
       <GridList cellHeight={160} className={classes.gridList} cols={3}>
-        {props.tileData.map(tile => (
-          <GridListTile key={tile.img} cols={tile.cols || 1}>
+        {props.tileData.map((tile, idx) => (
+          <GridListTile key={idx} cols={tile.cols || 1}>
             <img
               src={tile.thumb}
               alt={tile.title}
-              style={props.selectedTile === tile.img ? selectedStyle : {}}
-              onClick={() => props.onClick(tile.img)}
+              style={props.selectedTile === idx ? selectedStyle : {}}
+              onClick={() => props.onClick(idx)}
             />
           </GridListTile>
         ))}

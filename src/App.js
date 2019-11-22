@@ -12,16 +12,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       photos: tileData,
-      selectedPhoto: '',
+      selectedPhoto: 0,
       isFullScreen: false,
       isMenuOpen: false,
     };
-  }
-
-  componentDidMount() {
-    this.setState({
-      selectedPhoto: this.state.photos[0].img
-    });
   }
 
   handleTileClick(e) {
@@ -42,12 +36,47 @@ class App extends React.Component {
     }));
   }
 
+  handleNextClick() {
+    this.next();
+  }
+
+  handlePreviousClick() {
+    this.previous();
+  }
+
+  handleArrowKeyPress(e) {
+    if (e.key === 'ArrowLeft') {
+      console.log('left');
+      this.previous();
+    } else if (e.key === 'ArrowRight') {
+      console.log('right');
+      this.next();
+    }
+  }
+
+  next() {
+    if (this.state.selectedPhoto === tileData.length - 1) return;
+    this.setState(prevState => ({
+      selectedPhoto: prevState.selectedPhoto + 1
+    }));
+  }
+
+  previous() {
+    if (this.state.selectedPhoto === 0) return;
+    this.setState(prevState => ({
+      selectedPhoto: prevState.selectedPhoto - 1
+    }));
+  }
+
   render() {
     const photoOverlayClass = this.state.isFullScreen ? 'show' : '';
 
     return (
       <div>
-        <div className="app-container">
+        <div className="app-container"
+          onKeyDown={(e) => this.handleArrowKeyPress(e)}
+          tabIndex="0"
+        >
           <TopBar onClick={() => this.handleMenuClick()} />
           <Menu isOpen={this.state.isMenuOpen} />
           <PhotoTiles
@@ -56,9 +85,11 @@ class App extends React.Component {
             onClick={(e) => this.handleTileClick(e)}
           />
           <PhotoDisplay
-            photoPath={this.state.selectedPhoto}
+            photoPath={tileData[this.state.selectedPhoto].img}
             isFullScreen={this.state.isFullScreen}
-            onClick={() => this.handlePhotoClick()}
+            photoClick={() => this.handlePhotoClick()}
+            nextClick={() => this.handleNextClick()}
+            previousClick={() => this.handlePreviousClick()}
           />
         </div>
         <div id="photo-display-overlay" className={photoOverlayClass}></div>

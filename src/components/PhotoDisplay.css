@@ -28,3 +28,17 @@
   transform: translateX(-50%);
   cursor: pointer;
 }
+
+.nav-buttons {
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  background-color: white;
+}
+
+.nav-buttons i {
+  padding: 15px;
+  margin: 0 1px;
+  cursor: pointer;
+}
+
